@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BuzonActivity">
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="328dp"
+        android:layout_height="445dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="43dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/gris_btn_background"
+        tools:layout_editor_absoluteY="157dp" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="316dp"
+        android:layout_height="434dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="163dp" >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/edtTitulo"
+                android:layout_width="286dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:autofillHints=""
+                android:background="@drawable/edit_text_background"
+                android:drawablePadding="10dp"
+                android:drawableTint="@color/black"
+                android:hint="@string/edtTitulo"
+                android:inputType="text"
+                android:isScrollContainer="false"
+                android:paddingStart="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="RtlSymmetry,VisualLintTextFieldSize,TextContrastCheck" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/appCompatButton"
+                android:layout_width="283dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="11dp"
+                android:layout_marginEnd="17dp"
+                android:background="@drawable/buttom_background"
+                android:text="@string/btnEnviar"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine2"
+                tools:ignore="HardcodedText,TextSizeCheck" />
+
+            <EditText
+                android:id="@+id/editTextTextMultiLine2"
+                android:layout_width="286dp"
+                android:layout_height="285dp"
+                android:layout_marginStart="13dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="17dp"
+                android:background="@drawable/edit_text_background"
+                android:ems="10"
+                android:gravity="start|top"
+                android:hint="@string/edtComentario"
+                android:inputType="textMultiLine"
+                android:padding="10dp"
+                android:paddingStart="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtTitulo" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="411dp"
+        android:layout_height="83dp"
+        android:layout_marginBottom="94dp"
+        app:layout_constraintBottom_toTopOf="@+id/cardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/gris_btn_background" />
+
+    <ImageView
+        android:id="@+id/imgRegreso3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="80dp"
+        android:contentDescription="@string/relleno"
+        android:padding="8dp"
+        android:src="@drawable/baseline_keyboard_double_arrow_left_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="61dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/buzon"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/imageView5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgRegreso3" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,86 @@
+<resources>
+    <string name="app_name">ProyectoF</string>
+
+    <!-- Principal -->
+    <string name="saludo">Bienvenido</string>
+    <string name="usuario">Usuario</string>
+    <string name="busqueda">Buscar</string>
+    <string name="descuento">Descuento 20% en tinta</string>
+    <string name="comprar">Comprar</string>
+    <string name="catalogo">Productos populares</string>
+    <string name="ver">Ver todo</string>
+    <string name="calendario">Cita</string>
+    <string name="home">Inicio</string>
+    <string name="carrito">Carrito</string>
+    <string name="info">Info</string>
+
+    <!-- Carrito -->
+    <string name="micarrito">Mi Carrito</string>
+    <string name="orden">Resumen de Orden</string>
+    <string name="sub">SubTotal</string>
+    <string name="envio">Envio</string>
+    <string name="total">Total a pagar</string>
+    <string name="pagar">Pagar</string>
+
+    <!-- Citas -->
+    <string name="Agendar">Agendar Cita</string>
+    <string name="equipo">Equipo</string>
+
+    <!-- Nota producto -->
+    <string name="titulo">Titulo</string>
+    <string name="agregar">Agregar</string>
+
+    <!-- Registro -->
+    <string name="nombre">Nombre</string>
+    <string name="telefono">Telefono</string>
+
+    <!-- Login -->
+    <string name="login">Inicio de sesion</string>
+
+    <style name="registro">Registrate</style>
+
+    <string name="correo">Correo</string>
+    <string name="contrasena">Contraseña</string>
+    <string name="cambio">Olvido su contraseña</string>
+    <string name="registrar">Registrar</string>
+    <string name="relleno">imagen</string>
+
+    <!-- Info de la Empresa -->
+    <string name="mision">Mision</string>
+    <string name="txtMision">Demostrar nuestro compromiso continuo con la satisfaccion al cliente en cada uno de nuestros productos.</string>
+    <string name="vision">Vision</string>
+    <string name="txtVision">Ser la empresa con la que puedas contar como tu solución de productos de la ultima tecnología para tu casa o negocio.</string>
+    <string name="acerca">Acerca De</string>
+    <string name="txtAcerca">La empresa ha operado desde el 2008, y esperamos seguir con nuestra labor equipando con tecnología de punta a nuestros clientes.</string>
+    <string name="title_activity_maps">MapsActivity</string>
+
+    <!-- Ubicación y Horarios -->
+    <string name="ubicacion">Ubicacion</string>
+    <string name="txtUbicacion">Nos ubicamos sobre la calle Independencia 756, entre Calz de la Ferderación y calle Mezquitán, en Zona Centro, 44100 Guadalajara, Jal.</string>
+    <string name="horarios">Horarios de Atención</string>
+    <string name="txtHorarios">"Lunes a Viernes de 8:30 am - 6:00 pm\nSabados de 8:30 am a 1:00pm"</string>
+
+    <!-- Calendario de Citas -->
+    <string name="cita">Cita de Mantenimiento</string>
+    <string name="fecha">Fecha:</string>
+    <string name="txtFecha">Aun no seleccionada</string>
+    <string name="horario">Horarios Disponibles:</string>
+    <string-array name="horariosDisponibles">
+        <item>9:00 am - 10:00 am</item>
+        <item>10:00 am - 11:00 am</item>
+        <item>11:00 am - 12:00 pm</item>
+        <item>12:00 pm - 1:00 pm</item>
+        <item>1:00 pm - 2:00 pm</item>
+        <item>2:00 pm - 3:00 pm</item>
+        <item>4:00 pm - 5:00 pm</item>
+    </string-array>
+
+    <!-- Buzon de Comentarios y Quejas Usuario -->
+    <string name="buzon">Buzon de Comentarios y Quejas</string>
+    <string name="edtTitulo">Titulo</string>
+    <string name="edtComentario">Comentario</string>
+    <string name="btnEnviar">Enviar</string>
+
+    <!-- Buzon de Comentarios y Quejas Administrador -->
+
+</resources>
