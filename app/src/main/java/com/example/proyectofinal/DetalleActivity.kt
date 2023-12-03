@@ -2,6 +2,8 @@ package com.example.proyectofinal
 
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
@@ -10,10 +12,25 @@ class DetalleActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detalle)
 
-        // Intenta obtener el Producto de los extras del Intent
+        // Obtener el Producto de los extras del Intent
         val producto: Producto? = intent.getParcelableExtra("producto")
 
         if (producto != null) {
+            // Actualizar las vistas con la información del producto
+            val imgDetalleproducto: ImageView = findViewById(R.id.imgDetalleproducto)
+            imgDetalleproducto.setImageResource(producto.imagen)
+
+            val txtTitulo1: TextView = findViewById(R.id.txtTitulo1)
+            txtTitulo1.text = producto.nombre
+
+            val txtCosto2: TextView = findViewById(R.id.txtCosto2)
+            txtCosto2.text = "$${producto.precio}"
+
+            val txtDescripcion: TextView = findViewById(R.id.txtDescripcion)
+            txtDescripcion.text = producto.descripcion
+
+            // Resto de la lógica...
+
             val btnAgregar: Button = findViewById(R.id.btnAgregar)
             btnAgregar.setOnClickListener {
                 Carrito.addProducto(producto)
