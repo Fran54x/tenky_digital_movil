@@ -31,7 +31,8 @@
                     android:padding="8dp"
                     android:src="@drawable/baseline_keyboard_double_arrow_left_24"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:clickable="true"/>
 
                 <ImageView
                     android:id="@+id/imgextra"

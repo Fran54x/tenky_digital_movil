@@ -124,6 +124,7 @@
                 tools:ignore="RtlSymmetry,TextFields,VisualLintTextFieldSize,TextContrastCheck" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnRegistrar"
                 android:layout_width="160dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
