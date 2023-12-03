@@ -101,6 +101,7 @@
                 android:textColor="@color/primary" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnLogin"
                 android:layout_width="160dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
