@@ -1,5 +1,6 @@
 package com.example.proyectofinal
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -10,26 +11,24 @@ class PrincipalActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_principal)
 
-        // Obtener una referencia al RecyclerView
-        val recyclerView = findViewById<RecyclerView>(R.id.rvCatalogo)
+        val rvCatalogo: RecyclerView = findViewById(R.id.rvCatalogo)
+        rvCatalogo.layoutManager = LinearLayoutManager(this)
 
-        // Configurar el LinearLayoutManager
-        val layoutManager = LinearLayoutManager(this)
-        recyclerView.layoutManager = layoutManager
-
-        // Obtener la lista de productos (simulada)
         val productos = obtenerListaDeProductos()
-
-        // Crear y configurar el adaptador
-        val adapter = CatalogoAdapter(productos)
-        recyclerView.adapter = adapter
+        val adapter = CatalogoAdapter(productos, onItemClickListener)
+        rvCatalogo.adapter = adapter
     }
 
-    // Método simulado para obtener una lista de productos
+    private val onItemClickListener: (Producto) -> Unit = { producto ->
+        val intent = Intent(this, DetalleActivity::class.java)
+        intent.putExtra("producto", producto)
+        startActivity(intent)
+    }
+
     private fun obtenerListaDeProductos(): List<Producto> {
         return listOf(
-            Producto("Impresora Laser X100", "Impresora láser monocromática", 249.99),
-            Producto("Copiadora Multifuncional A200", "Copiadora multifuncional a color", 599.99),
+            Producto(R.drawable.producto1, "Producto 1", 19.99, "Descripción del Producto 1"),
+            Producto(R.drawable.producto2, "Producto 2", 29.99, "Descripción del Producto 2"),
             // Agrega más productos según sea necesario
         )
     }

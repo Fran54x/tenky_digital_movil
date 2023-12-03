@@ -1,3 +1,3 @@
 package com.example.proyectofinal
 
-data class Producto(val nombre: String, val descripcion: String, val precio: Double)
+data class Producto(val imagen: Int, val nombre: String, val precio: Double, val descripcion: String)
