@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
                 listaUsuarios.find { it.correo == correo && it.contrasena == contrasena }
 
             if (usuarioEncontrado != null) {
-                val intent = Intent(this, InfoActivity::class.java)
+                val intent = Intent(this, PrincipalActivity::class.java)
                 intent.putExtra("usuario", usuarioEncontrado)
                 startActivity(intent)
             } else {

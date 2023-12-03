@@ -27,8 +27,8 @@ class PrincipalActivity : AppCompatActivity() {
 
     private fun obtenerListaDeProductos(): List<Producto> {
         return listOf(
-            Producto(R.drawable.producto1, "Producto 1", 19.99, "Descripción del Producto 1"),
-            Producto(R.drawable.producto2, "Producto 2", 29.99, "Descripción del Producto 2"),
+            Producto(R.drawable.p1, "Producto 1", 19.99, "Descripción del Producto 1"),
+            Producto(R.drawable.p2, "Producto 2", 29.99, "Descripción del Producto 2"),
             // Agrega más productos según sea necesario
         )
     }
