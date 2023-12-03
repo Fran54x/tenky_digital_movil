@@ -30,7 +30,10 @@ class DetalleActivity : AppCompatActivity() {
             txtDescripcion.text = producto.descripcion
 
             // Resto de la lógica...
-
+            val imgRegreso: ImageView = findViewById(R.id.imgRegreso)
+            imgRegreso.setOnClickListener {
+                finish() // Cierra la actividad actual y regresa a la actividad anterior (PrincipalActivity)
+            }
             val btnAgregar: Button = findViewById(R.id.btnAgregar)
             btnAgregar.setOnClickListener {
                 Carrito.addProducto(producto)

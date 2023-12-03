@@ -2,6 +2,7 @@ package com.example.proyectofinal
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -17,6 +18,14 @@ class PrincipalActivity : AppCompatActivity() {
         val productos = obtenerListaDeProductos()
         val adapter = CatalogoAdapter(productos, onItemClickListener)
         rvCatalogo.adapter = adapter
+
+        val imgCarrito: ImageView = findViewById(R.id.imgCarrito)
+
+        imgCarrito.setOnClickListener {
+            // Abre la actividad del carrito
+            val intent = Intent(this, CarritoActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private val onItemClickListener: (Producto) -> Unit = { producto ->
