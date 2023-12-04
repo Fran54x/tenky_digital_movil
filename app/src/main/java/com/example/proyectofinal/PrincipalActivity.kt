@@ -28,15 +28,19 @@ class PrincipalActivity : AppCompatActivity() {
         rvCatalogo.adapter = adapter
 
         val imgCarrito: ImageView = findViewById(R.id.imgCarrito)
+        val imgCalendario: ImageView = findViewById(R.id.imgCalendario)
+
+        imgCalendario.setOnClickListener{
+            val intent = Intent(this, CitaActivity::class.java)
+            startActivity(intent)
+        }
 
         imgCarrito.setOnClickListener {
-            // Abre la actividad del carrito
             val intent = Intent(this, CarritoActivity::class.java)
             startActivity(intent)
         }
         val txtVer: TextView = findViewById(R.id.txtVer)
         txtVer.setOnClickListener {
-            // Abrir Activity_ProductoIndividual al hacer clic en el TextView
             val intent = Intent(this, ProductoIndividualActivity::class.java)
             startActivity(intent)
         }
