@@ -35,8 +35,12 @@ class ProductoIndividualActivity : AppCompatActivity() {
 
     private fun obtenerListaDeProductos(): List<Producto> {
         return listOf(
-            Producto(R.drawable.p1, "Impresora 1", 100.0, "Descripción de la impresora 1"),
-            Producto(R.drawable.p2, "Producto 2", 150.0, "Descripción del producto 2"),
+            Producto(R.drawable.p1, "Canon IR2200", 10000.00, "Copiadora e impresora Blanco y negro, cuenta con escaner a color resolucion hasta 600x600 pixeles, capacidad de escaneo hasta 13x18 pulgadas."),
+            Producto(R.drawable.p2, "Ricoh MP40", 6000.00, "Copiadora e impresora color laser, cuenta con escaner a color resolucion hasta 800x800 pixeles, capacidad de escaneo hasta 11x17 pulgadas o doble carta."),
+            Producto(R.drawable.p3, "Canon IR4020", 14599.99, "Copiadora e impresora Blanco y negro, cuenta con escaner a color resolucion hasta 800x800 pixeles, capacidad de escaneo hasta 11x17 pulgadas o doble carta, con capacidad de hasta 4000 copias por hora."),
+            Producto(R.drawable.p4, "Xerox Docucolor 2035", 40499.99, "Copiadora e impresora a color laser, cuenta con escaner a color resolucion hasta 600x600 pixeles, capacidad de escaneo hasta 13x18 pulgadas con unos colores muy vivos y puros."),
+            Producto(R.drawable.p5, "Kyocera VN3025", 4200.00, "Copiadora e impresora Blanco y negro, cuenta con escaner a color resolucion hasta 800x800 pixeles, capacidad de escaneo hasta 11x17 pulgadas o doble carta."),
+            Producto(R.drawable.p6, "Real Madrid", 14000.00, "El mejor club en la historia de futbol siendo el mas ganador de la maxima competicion europea y de mayor prestigio la UEFA Champions League con un total de 14."),
         )
     }
 }

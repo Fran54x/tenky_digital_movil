@@ -84,8 +84,9 @@ class PrincipalActivity : AppCompatActivity() {
 
     private fun obtenerListaDeProductos(): List<Producto> {
         return listOf(
-            Producto(R.drawable.p1, "Producto 1", 19.99, "Descripción del Producto 1"),
-            Producto(R.drawable.p2, "Producto 2", 29.99, "Descripción del Producto 2"),
+            Producto(R.drawable.p1, "Canon IR2200", 10000.00, "Copiadora e impresora Blanco y negro, cuenta con escaner a color resolucion hasta 600x600 pixeles, capacidad de escaneo hasta 13x18 pulgadas"),
+            Producto(R.drawable.p2, "Ricoh MP40", 6000.00, "Copiadora e impresora color laser, cuenta con escaner a color resolucion hasta 800x800 pixeles, capacidad de escaneo hasta 11x17 pulgadas o doble carta"),
+            Producto(R.drawable.p3, "Canon IR4020", 14599.99, "Copiadora e impresora color laser, cuenta con escaner a color resolucion hasta 800x800 pixeles, capacidad de escaneo hasta 11x17 pulgadas o doble carta, con capacidad de hasta 4000 copias por hora"),
         )
     }
 }
