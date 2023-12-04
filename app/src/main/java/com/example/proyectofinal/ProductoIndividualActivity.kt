@@ -18,7 +18,9 @@ class ProductoIndividualActivity : AppCompatActivity() {
         val productos = obtenerListaDeProductos()
         val adapter = ProductoAdapter(productos)
         recyclerView.adapter = adapter
-
+        btnRegreso.setOnClickListener {
+            finish()
+        }
         adapter.setOnItemClickListener(object : ProductoAdapter.OnItemClickListener {
             override fun onItemClick(position: Int) {
                 val productoSeleccionado = productos[position]

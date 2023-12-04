@@ -7,13 +7,21 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="250dp"
-        android:layout_height="300dp"
+        android:layout_width="278dp"
+        android:layout_height="298dp"
         android:padding="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:listitem="@layout/activity_productoindividual" />
+
+    <Button
+        android:id="@+id/btnRegreso"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:text="Button"
+        tools:layout_editor_absoluteX="21dp"
+        tools:layout_editor_absoluteY="24dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
