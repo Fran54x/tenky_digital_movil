@@ -23,6 +23,7 @@
             android:contentDescription="@string/relleno"
             android:padding="4dp"
             android:src="@drawable/baseline_keyboard_double_arrow_left_24" />
+
     </LinearLayout>
 
     <TextView
@@ -192,4 +193,17 @@
                 android:scaleType="centerCrop"></ImageView>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/imgCitasAdmin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="440dp"
+        android:layout_marginEnd="4dp"
+        android:contentDescription="@string/relleno"
+        android:padding="8dp"
+        android:rotation="180"
+        android:src="@drawable/baseline_keyboard_double_arrow_left_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top_linearLayout" />
 </androidx.constraintlayout.widget.ConstraintLayout>

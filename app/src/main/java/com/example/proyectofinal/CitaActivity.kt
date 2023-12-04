@@ -31,12 +31,24 @@ class CitaActivity:  AppCompatActivity() {
         correo = findViewById(R.id.edtCorreo)
         fecha = findViewById(R.id.edtFecha)
         enviarBtn = findViewById(R.id.btnEnviar)
+
         val imgRegreso: ImageView = findViewById(R.id.imgextra3)
         imgRegreso.setOnClickListener {
             finish()
         }
+
+        val imgCitaAdmin: ImageView = findViewById(R.id.imgCitasAdmin)
+        imgCitaAdmin.setOnClickListener {
+            IrCita()
+        }
+
         enviarBtn.setOnClickListener{AgregarCita()}
 
+    }
+
+    private fun IrCita(){
+        val intent = Intent(this, CitasAdmin::class.java)
+        startActivity(intent)
     }
 
     private fun AgregarCita(){
