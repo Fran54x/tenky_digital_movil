@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class CatalogoAdapter(
-    private val productos: List<Producto>,
+    private var listaProductos: List<Producto>,
     private val onItemClickListener: (Producto) -> Unit
 ) : RecyclerView.Adapter<CatalogoAdapter.ViewHolder>() {
 
@@ -18,13 +18,17 @@ class CatalogoAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val producto = productos[position]
+        val producto = listaProductos[position]  // Cambiado de productos a listaProductos
         holder.bind(producto)
         holder.itemView.setOnClickListener { onItemClickListener(producto) }
     }
 
     override fun getItemCount(): Int {
-        return productos.size
+        return listaProductos.size  // Cambiado de productos a listaProductos
+    }
+    fun actualizarLista(nuevaLista: List<Producto>) {
+        listaProductos = nuevaLista
+        notifyDataSetChanged()
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
