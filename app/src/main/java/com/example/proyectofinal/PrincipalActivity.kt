@@ -3,7 +3,6 @@ package com.example.proyectofinal
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -21,15 +20,17 @@ class PrincipalActivity : AppCompatActivity() {
         rvCatalogo.adapter = adapter
 
         val imgCarrito: ImageView = findViewById(R.id.imgCarrito)
-        val txtVer: TextView = findViewById(R.id.txtVer)
-        txtVer.setOnClickListener {
-            // Abrir Activity_ProductoIndividual al hacer clic en el TextView
-            val intent = Intent(this, ProductoIndividualActivity::class.java)
-            startActivity(intent)
-        }
+
         imgCarrito.setOnClickListener {
             // Abre la actividad del carrito
             val intent = Intent(this, CarritoActivity::class.java)
+            startActivity(intent)
+        }
+
+        val imgInfo: ImageView = findViewById(R.id.imgInfo)
+        imgInfo.setOnClickListener {
+            // Abre la actividad del carrito
+            val intent = Intent(this, UbicacionActivity::class.java)
             startActivity(intent)
         }
     }
