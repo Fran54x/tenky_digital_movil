@@ -42,7 +42,7 @@ class CitaActivity:  AppCompatActivity() {
     private fun AgregarCita(){
 
         val nombreStr = nombre.text.toString()
-        val telefonoInt = nombre.text.toString().toIntOrNull()
+        val telefonoInt = telefono.text.toString().toIntOrNull()
         val equipoStr = equipo.text.toString()
         val fechaStr = fecha.text.toString()
         val correoStr = correo.text.toString()
@@ -53,6 +53,11 @@ class CitaActivity:  AppCompatActivity() {
         }
 
         val dataHolder = DataHolder
+
+        if (dataHolder.citaArray == null) {
+            dataHolder.citaArray = Array<Cita?>(100) { null }
+        }
+
 
         if (dataHolder.citaArray?.any { it?.fecha == fechaStr } == true) {
             Toast.makeText(this, "Fecha no disponible, por favor, elija otra", Toast.LENGTH_SHORT).show()
@@ -81,7 +86,6 @@ class CitaActivity:  AppCompatActivity() {
 
         val intent = Intent(this, PrincipalActivity::class.java)
         startActivity(intent)
-
     }
 
 }
