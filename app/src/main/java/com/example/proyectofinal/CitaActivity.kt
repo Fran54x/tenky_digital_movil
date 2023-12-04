@@ -3,6 +3,7 @@ package com.example.proyectofinal
 import android.content.Intent
 import android.os.Bundle
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
@@ -30,7 +31,10 @@ class CitaActivity:  AppCompatActivity() {
         correo = findViewById(R.id.edtCorreo)
         fecha = findViewById(R.id.edtFecha)
         enviarBtn = findViewById(R.id.btnEnviar)
-
+        val imgRegreso: ImageView = findViewById(R.id.imgextra3)
+        imgRegreso.setOnClickListener {
+            finish()
+        }
         enviarBtn.setOnClickListener{AgregarCita()}
 
     }
