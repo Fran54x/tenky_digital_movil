@@ -14,10 +14,18 @@ import androidx.recyclerview.widget.RecyclerView
 class PrincipalActivity : AppCompatActivity() {
 
     private lateinit var listaProductos: List<Producto>  // Agregada la referencia a la lista de productos
-
+    private var usuario: Usuario? = null
+    private val txtSaludo: TextView? = null
+    private val txtUsuario: TextView? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_principal)
+        usuario = intent.getSerializableExtra("usuario") as? Usuario
+        usuario?.let {
+            // Aquí puedes usar el objeto usuario, por ejemplo mostrar su nombre en un TextView
+            val txtUsuario = findViewById<TextView>(R.id.txtUsuario)
+            txtUsuario.text = "Bienvenido, ${it.nombre}"
+        }
 
         val rvCatalogo: RecyclerView = findViewById(R.id.rvCatalogo)
         rvCatalogo.layoutManager = LinearLayoutManager(this)

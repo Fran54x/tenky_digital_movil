@@ -73,6 +73,9 @@
         <activity
             android:name=".CitaActivity"
             android:exported="false" />
+        <activity
+            android:name=".ActivityRegistro"
+            android:exported="false" />
     </application>
 
 </manifest>
