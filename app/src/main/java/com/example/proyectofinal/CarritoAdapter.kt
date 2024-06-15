@@ -3,10 +3,8 @@ package com.example.proyectofinal
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AbsListView
 import android.widget.BaseAdapter
 import android.widget.TextView
-import androidx.recyclerview.widget.RecyclerView
 
 class CarritoAdapter(private val productos: List<Producto>) : BaseAdapter() {
 
@@ -38,19 +36,8 @@ class CarritoAdapter(private val productos: List<Producto>) : BaseAdapter() {
         val producto = getItem(position) as Producto
         holder.bind(producto)
 
-        // Agregar un margen inferior solo para el último elemento
-        val params = ViewGroup.MarginLayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
-        view.layoutParams = params
-
-        if (position == count - 1) {
-            params.bottomMargin = view.context.resources.getDimensionPixelSize(R.dimen.margin_bottom_last_item)
-        } else {
-            params.bottomMargin = 0
-        }
-
         return view
     }
-
 
     class ViewHolder(itemView: View) {
         private val nombreProducto: TextView = itemView.findViewById(R.id.nombreProductoCarrito)
