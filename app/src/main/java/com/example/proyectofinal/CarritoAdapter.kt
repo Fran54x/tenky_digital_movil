@@ -4,9 +4,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import android.widget.Button
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 
-class CarritoAdapter(private val productos: List<Producto>) : BaseAdapter() {
+class CarritoAdapter(private val productos: List<Producto>, private val onDelete: (Producto) -> Unit) : BaseAdapter() {
 
     override fun getCount(): Int {
         return productos.size
@@ -34,7 +36,7 @@ class CarritoAdapter(private val productos: List<Producto>) : BaseAdapter() {
         }
 
         val producto = getItem(position) as Producto
-        holder.bind(producto)
+        holder.bind(producto, onDelete)
 
         return view
     }
@@ -42,10 +44,14 @@ class CarritoAdapter(private val productos: List<Producto>) : BaseAdapter() {
     class ViewHolder(itemView: View) {
         private val nombreProducto: TextView = itemView.findViewById(R.id.nombreProductoCarrito)
         private val precioProducto: TextView = itemView.findViewById(R.id.precioProductoCarrito)
+        private val btnEliminar: Button = itemView.findViewById(R.id.btnEliminar)
 
-        fun bind(producto: Producto) {
+        fun bind(producto: Producto, onDelete: (Producto) -> Unit) {
             nombreProducto.text = producto.nombre
             precioProducto.text = "$ ${producto.precio}"
+            btnEliminar.setOnClickListener {
+                onDelete(producto)
+            }
         }
     }
 }

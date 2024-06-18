@@ -52,4 +52,23 @@ object FirestoreUtils {
             }
             .addOnFailureListener { e -> onFailure(e) }
     }
+    fun eliminarProductoDelCarrito(producto: Producto, userId: String?, onSuccess: () -> Unit, onFailure: (Exception) -> Unit) {
+        if (userId == null) {
+            onFailure(Exception("Usuario no autenticado"))
+            return
+        }
+
+        val carritoRef = db.collection("carritos").document(userId).collection("productos")
+        val productoQuery = carritoRef.whereEqualTo("nombre", producto.nombre)
+
+        productoQuery.get()
+            .addOnSuccessListener { documents ->
+                for (document in documents) {
+                    document.reference.delete()
+                        .addOnSuccessListener { onSuccess() }
+                        .addOnFailureListener { e -> onFailure(e) }
+                }
+            }
+            .addOnFailureListener { e -> onFailure(e) }
+    }
 }

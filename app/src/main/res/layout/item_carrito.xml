@@ -13,7 +13,7 @@
 
         <TextView
             android:id="@+id/nombreProductoCarrito"
-            android:layout_width="270dp"
+            android:layout_width="201dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="Nombre del Producto"
@@ -28,5 +28,12 @@
             android:text="$ 19.99"
             android:textColor="@android:color/holo_green_dark"
             android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/btnEliminar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Eliminar" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
