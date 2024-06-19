@@ -1,16 +1,24 @@
 package com.example.proyectofinal
 
+import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.hardware.Sensor
+import android.hardware.SensorEvent
+import android.hardware.SensorEventListener
+import android.hardware.SensorManager
 import android.os.Bundle
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.widget.AppCompatButton
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 
 
-
-class CitaActivity:  AppCompatActivity() {
+class CitaActivity:  AppCompatActivity(), SensorEventListener {
 
     private lateinit var nombre: EditText
     private lateinit var telefono: EditText
@@ -18,12 +26,22 @@ class CitaActivity:  AppCompatActivity() {
     private lateinit var fecha: EditText
     private lateinit var correo: EditText
     private lateinit var enviarBtn: AppCompatButton
-   // val citaArray = Array<Cita?>(100){null}
+    // val citaArray = Array<Cita?>(100){null}
 
+    private lateinit var sensorManager: SensorManager
+    private var lightSensor: Sensor? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cita)
+
+        sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
+        lightSensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT)
+
+        if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.BODY_SENSORS) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.BODY_SENSORS), 1)
+        }
+
 
         nombre = findViewById(R.id.edtNombre)
         telefono = findViewById(R.id.edtTelefono)
@@ -45,6 +63,34 @@ class CitaActivity:  AppCompatActivity() {
         enviarBtn.setOnClickListener{AgregarCita()}
 
     }
+
+    override fun onResume() {
+        super.onResume()
+        lightSensor?.also { sensor ->
+            sensorManager.registerListener(this, sensor, SensorManager.SENSOR_DELAY_NORMAL)
+        }
+    }
+
+    override fun onPause() {
+        super.onPause()
+        sensorManager.unregisterListener(this)
+    }
+
+    override fun onSensorChanged(event: SensorEvent?) {
+        if (event?.sensor?.type == Sensor.TYPE_LIGHT) {
+            val lightLevel = event.values[0]
+            if (lightLevel < 10) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            }
+        }
+    }
+
+    override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
+        TODO("Not yet implemented")
+    }
+
 
     private fun IrCita(){
         val intent = Intent(this, CitasAdmin::class.java)
